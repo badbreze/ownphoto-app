@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "ownphoto-app",
+    "name": "Repetita",
     "description": "A very interesting project.",
-    "slug": "ownphoto-app",
+    "slug": "repetita",
     "privacy": "public",
     "sdkVersion": "28.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

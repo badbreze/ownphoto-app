@@ -5,9 +5,19 @@ import AppNavigator from './navigation/AppNavigator';
 import LoginScreen from "./screens/LoginScreen";
 import LoginApi from "./api/login";
 import Colors from "./constants/Colors";
+import {Theme} from "./constants/Theme";
+
+//Bootstrapping
+//import {bootstrap} from './helpers/bootstrap';
 
 //Global vars
 GLOBAL = require('./constants/Globals');
+
+//Do bootstrapping
+bootstrap();
+import { bootstrap } from './helpers/bootstrap';
+
+bootstrap();
 
 export default class App extends React.Component {
     constructor(props) {
@@ -20,6 +30,23 @@ export default class App extends React.Component {
 
         this._getReadyImLoggedIn = this._getReadyImLoggedIn.bind(this);
     }
+
+    componentWillMount() {
+        this.loadAssets();
+    }
+
+    loadAssets = async () => {
+        await Font.loadAsync({
+            fontawesome: require('./assets/fonts/fontawesome.ttf'),
+            icomoon: require('./assets/fonts/icomoon.ttf'),
+            'Righteous-Regular': require('./assets/fonts/Righteous-Regular.ttf'),
+            'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
+            'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
+            'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+            'Roboto-Light': require('./assets/fonts/Roboto-Light.ttf'),
+        });
+        this.setState({ isLoaded: true });
+    };
 
     render() {
         if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {

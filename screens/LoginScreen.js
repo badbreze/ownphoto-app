@@ -13,8 +13,6 @@ import {
     ActivityIndicator
 } from 'react-native';
 import {WebBrowser} from 'expo';
-
-import {MonoText} from '../components/StyledText';
 import LoginApi from "../api/login";
 import Colors from "../constants/Colors";
 
@@ -85,16 +83,12 @@ export default class LoginScreen extends React.Component {
                 {(!this.state.loading) && (
                     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
                         <View style={styles.helpContainer}>
-                            <Text style={styles.helpLinkText}>OwnPhoto</Text>
+                            <Text style={styles.helpLinkText}>Repetita</Text>
                         </View>
 
                         <View style={styles.welcomeContainer}>
                             <Image
-                                source={
-                                    __DEV__
-                                        ? require('../assets/images/robot-dev.png')
-                                        : require('../assets/images/robot-prod.png')
-                                }
+                                source={require('../assets/images/repetita.png')}
                                 style={styles.welcomeImage}
                             />
                         </View>

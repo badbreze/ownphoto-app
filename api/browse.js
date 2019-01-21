@@ -13,8 +13,12 @@ export default class BrowseApi extends Api {
         });
     }
 
-    index(page, model) {
-        return this.GET('/v1/browse/index');
+    materie(page, model) {
+        return this.GET('/v1/browse/list-materie');
+    }
+
+    tutors(id) {
+        return this.GET('/v1/browse/list-tutors', {materie_id: id});
     }
 
     date(day, month, year) {
